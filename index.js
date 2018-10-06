@@ -16,9 +16,14 @@ for (const row of stmt.iterate()) {
     for (let i = 0; i < layer.length; i++) {
       let f = layer.feature(i).toGeoJSON(x, y, z)
       f.tippecanoe = { layer: layerName }
-      console.log(JSON.stringify(f))
+      for (let key of config.blacklist) {
+        delete f.properties[key]
+      }
+//      console.log(`${f.geometry.type}: ${JSON.stringify(f.properties)}`)
+      if (f.properties.source === 'YahooJapan/ALPSMAP') console.log(JSON.stringify(f))
     }
   }
+  tile = null
 }
 
 db.close
