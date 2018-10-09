@@ -1,17 +1,3 @@
 {
-  mbtiles: japan.mbtiles
-  blacklist: [
-    @id
-    @type
-    @version
-    @changeset
-    @uid
-    @user
-    @timestamp
-    yh:WIDTH
-    yh:TYPE
-    yh:STRUCTURE
-    yh:TOTYUMONO
-    yh:WIDTH_RANK
-  ]
+  dummy: true
 }
